@@ -9,6 +9,10 @@ const dotenv = require('dotenv')
 global.__basedir = __dirname;
 app.use(cors())
 
+app.get('/' , (req,res) => {
+    res.status(200).json({message:'resume parsing API'})
+})
+
 app.use('/',resume)
 
 // module.exports.parseResumeFile = function(inputFile, outputDir) {
