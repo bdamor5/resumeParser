@@ -1,5 +1,5 @@
 const uploadFile = require("./upload");
-const ResumeParser = require('resume-parser');
+const ResumeParser = require('./resume-parser/src/index');
 
 const upload = async (req, res) => {
   try {
