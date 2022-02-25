@@ -4,6 +4,8 @@ const express = require('express');
 const app = express();
 const cors = require("cors");
 const resume = require('./routes')
+const dotenv = require('dotenv')
+    dotenv.config()
 global.__basedir = __dirname;
 app.use(cors())
 
@@ -31,4 +33,4 @@ app.use('/',resume)
 //   });
 // };
 
-app.listen(6000,() => console.log('SERVER RUNNING ON PORT 6000'))
+app.listen(process.env.PORT,() => console.log('SERVER RUNNING ON PORT 6000'))
