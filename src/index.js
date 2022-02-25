@@ -10,7 +10,7 @@ global.__basedir = __dirname;
 app.use(cors())
 
 app.get('/' , (req,res) => {
-    res.status(200).send('Resume Parsing API')
+    res.status(200).send('Resume Server Parsing API')
 })
 
 app.use('/',resume)
