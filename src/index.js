@@ -9,15 +9,13 @@ var timeout = require('connect-timeout')
     dotenv.config()
 global.__basedir = __dirname;
 
-app.use(timeout('5s'))
 app.use(cors())
-app.use(haltOnTimedout)
 
 app.get('/' , (req,res) => {
     res.status(200).send('Resume Server Parsing API')
 })
 
-app.use('/',resume)
+app.use('/',timeout('10s'),haltOnTimedout,resume)
 
 function haltOnTimedout (req, res, next) {
     if (!req.timedout) next()
