@@ -5,7 +5,6 @@ const app = express();
 const cors = require("cors");
 const resume = require('./routes')
 const dotenv = require('dotenv')
-var timeout = require('connect-timeout')
     dotenv.config()
 global.__basedir = __dirname;
 
@@ -15,7 +14,7 @@ app.get('/' , (req,res) => {
     res.status(200).send('Resume Server Parsing API')
 })
 
-app.use('/',timeout('10s'),haltOnTimedout,resume)
+app.use('/',resume)
 
 function haltOnTimedout (req, res, next) {
     if (!req.timedout) next()
