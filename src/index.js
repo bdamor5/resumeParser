@@ -16,4 +16,4 @@ app.get('/' , (req,res) => {
 
 app.use('/',resume)
 
-app.listen(process.env.PORT,() => console.log('SERVER RUNNING ON PORT 6000'))
+app.listen(process.env.PORT || 6000,() => console.log('SERVER RUNNING ON PORT 6000'))
