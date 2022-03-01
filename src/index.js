@@ -16,8 +16,4 @@ app.get('/' , (req,res) => {
 
 app.use('/',resume)
 
-function haltOnTimedout (req, res, next) {
-    if (!req.timedout) next()
-  }
-
 app.listen(process.env.PORT,() => console.log('SERVER RUNNING ON PORT 6000'))
