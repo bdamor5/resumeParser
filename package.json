@@ -26,7 +26,8 @@
   "scripts": {
     "test": "node test.js",
     "lint": "prettier --single-quote --trailing-comma es5 --write test.js src/*.js src/**/*.js src/**/**/*.js",
-    "start": "nodemon src/index.js"
+    "start": "node src/index.js",
+    "dev" : "nodemon src/index.js"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
